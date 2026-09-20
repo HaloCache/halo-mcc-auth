@@ -1,0 +1,64 @@
+{
+    "name": "@halocache/halo-mcc-auth",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Xbox Live authentication implementing the SISU flow",
+    "main": "src/index.js",
+    "types": "types/index.d.ts",
+    "files": [
+        "src/",
+        "types/",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "test": "node --test \"tests/**/*.test.js\" && npm run test:types",
+        "build:types": "node ../../scripts/dev/buildGeneratedPackageTypes.js",
+        "test:types": "npm run build:types && tsc --noEmit --strict --module NodeNext --moduleResolution NodeNext --target ES2022 --lib ES2022,DOM --types node types/index.d.ts",
+        "test:unit": "node --test \"tests/unit/**/*.test.js\"",
+        "test:coverage": "c8 node --test \"tests/**/*.test.js\""
+    },
+    "keywords": [
+        "xbox",
+        "xbox-live",
+        "mcc",
+        "master-chief-collection",
+        "auth",
+        "sisu",
+        "halo",
+        "api",
+        "xsts"
+    ],
+    "author": {
+        "name": "Pix3lPirat3",
+        "url": "https://github.com/Pix3lPirat3"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HaloCache/halo-mcc-auth.git",
+        "directory": "packages/halo-mcc-auth"
+    },
+    "homepage": "https://github.com/HaloCache/halo-mcc-auth/tree/main/packages/halo-mcc-auth#readme",
+    "bugs": {
+        "url": "https://github.com/HaloCache/halo-mcc-auth/issues"
+    },
+    "engines": {
+        "node": ">=22.19.0"
+    },
+    "dependencies": {
+        "undici": "^8.10.2"
+    },
+    "devDependencies": {
+        "@types/node": "24.13.5",
+        "c8": "^12.0.0",
+        "typescript": "7.0.2"
+    },
+    "sideEffects": false,
+    "exports": {
+        ".": {
+            "types": "./types/index.d.ts",
+            "default": "./src/index.js"
+        }
+    }
+}
