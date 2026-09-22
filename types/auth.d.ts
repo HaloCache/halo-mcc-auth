@@ -1,5 +1,4 @@
 /**
- * Xbox Live authentication using the Halo MCC client ID and Win32 SISU flow.
  * Manages cached credentials, token refresh, and API tokens.
  *
  * @class XboxAuth
